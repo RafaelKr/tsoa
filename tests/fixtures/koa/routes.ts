@@ -236,7 +236,7 @@ const models: TsoaRoute.Models={
 
 export function RegisterRoutes(router: any) {
   router.get('/v1',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -255,7 +255,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/rootControllerMethodWithPath',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -274,7 +274,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.delete('/v1/DeleteTest',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -293,7 +293,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.delete('/v1/DeleteTest/Current',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -312,7 +312,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.delete('/v1/DeleteTest/:numberPathParam/:booleanPathParam/:stringPathParam',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         numberPathParam: { "in": "path", "name": "numberPathParam", "required": true, "dataType": "double" },
         stringPathParam: { "in": "path", "name": "stringPathParam", "required": true, "dataType": "string" },
@@ -337,7 +337,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -356,7 +356,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/Current',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -375,7 +375,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/ClassModel',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -394,7 +394,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/Multi',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -413,7 +413,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/:numberPathParam/:booleanPathParam/:stringPathParam',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         numberPathParam: { "in": "path", "name": "numberPathParam", "required": true, "dataType": "double", "validators": { "isDouble": { "errorMsg": "numberPathParam" }, "minimum": { "value": 1 }, "maximum": { "value": 10 } } },
         stringPathParam: { "in": "path", "name": "stringPathParam", "required": true, "dataType": "string", "validators": { "minLength": { "value": 1 }, "maxLength": { "value": 10 } } },
@@ -439,7 +439,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/ResponseWithUnionTypeProperty',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -458,7 +458,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/UnionTypeResponse',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -477,7 +477,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/Request',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         request: { "in": "request", "name": "request", "required": true, "dataType": "object" },
       };
@@ -497,7 +497,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/DateParam',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         date: { "in": "query", "name": "date", "required": true, "dataType": "datetime" },
       };
@@ -517,7 +517,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/ThrowsError',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -536,7 +536,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/GeneratesTags',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -555,7 +555,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/HandleBufferType',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         buffer: { "in": "query", "name": "buffer", "required": true, "dataType": "buffer" },
       };
@@ -575,7 +575,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/GenericModel',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -594,7 +594,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/GenericModelArray',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -613,7 +613,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/GenericPrimitive',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -632,7 +632,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/GetTest/GenericPrimitiveArray',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -651,7 +651,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.patch('/v1/PatchTest',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         model: { "in": "body", "name": "model", "required": true, "ref": "TestModel" },
       };
@@ -671,7 +671,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.patch('/v1/PatchTest/Location',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -690,7 +690,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.patch('/v1/PatchTest/Multi',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -709,7 +709,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.patch('/v1/PatchTest/WithId/:id',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         id: { "in": "path", "name": "id", "required": true, "dataType": "double" },
       };
@@ -729,7 +729,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/PostTest',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         model: { "in": "body", "name": "model", "required": true, "ref": "TestModel" },
       };
@@ -749,7 +749,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.patch('/v1/PostTest',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         model: { "in": "body", "name": "model", "required": true, "ref": "TestModel" },
       };
@@ -769,7 +769,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/PostTest/WithClassModel',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         model: { "in": "body", "name": "model", "required": true, "ref": "TestClassModel" },
       };
@@ -789,7 +789,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/PostTest/Location',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -808,7 +808,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/PostTest/Multi',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -827,7 +827,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/PostTest/WithId/:id',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         id: { "in": "path", "name": "id", "required": true, "dataType": "double" },
       };
@@ -847,7 +847,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/PostTest/WithBodyAndQueryParams',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         model: { "in": "body", "name": "model", "required": true, "ref": "TestModel" },
         query: { "in": "query", "name": "query", "required": true, "dataType": "string" },
@@ -868,7 +868,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/PostTest/GenericBody',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         genericReq: { "in": "body", "name": "genericReq", "required": true, "ref": "GenericRequestTestModel" },
       };
@@ -888,7 +888,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.put('/v1/PutTest',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         model: { "in": "body", "name": "model", "required": true, "ref": "TestModel" },
       };
@@ -908,7 +908,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.put('/v1/PutTest/Location',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -927,7 +927,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.put('/v1/PutTest/Multi',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -946,7 +946,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.put('/v1/PutTest/WithId/:id',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         id: { "in": "path", "name": "id", "required": true, "dataType": "double" },
       };
@@ -966,7 +966,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/Get',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -985,7 +985,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/MethodTest/Post',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1004,7 +1004,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.patch('/v1/MethodTest/Patch',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1023,7 +1023,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.put('/v1/MethodTest/Put',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1042,7 +1042,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.delete('/v1/MethodTest/Delete',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1061,7 +1061,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/Description',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1080,7 +1080,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/Tags',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1099,7 +1099,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/MultiResponse',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1118,7 +1118,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/SuccessResponse',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1138,7 +1138,7 @@ export function RegisterRoutes(router: any) {
     });
   router.get('/v1/MethodTest/ApiSecurity',
     authenticateMiddleware([{ "name": "api_key" }]),
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1158,7 +1158,7 @@ export function RegisterRoutes(router: any) {
     });
   router.get('/v1/MethodTest/OauthSecurity',
     authenticateMiddleware([{ "name": "tsoa_auth", "scopes": ["write:pets", "read:pets"] }]),
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1178,7 +1178,7 @@ export function RegisterRoutes(router: any) {
     });
   router.get('/v1/MethodTest/OauthOrAPIkeySecurity',
     authenticateMiddleware([{ "name": "tsoa_auth", "scopes": ["write:pets", "read:pets"] }, { "name": "api_key" }]),
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1197,7 +1197,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/DeprecatedMethod',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1216,7 +1216,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/SummaryMethod',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1235,7 +1235,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/MethodTest/returnAnyType',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1254,7 +1254,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/Query',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         firstname: { "in": "query", "name": "firstname", "required": true, "dataType": "string" },
         lastname: { "in": "query", "name": "last_name", "required": true, "dataType": "string" },
@@ -1279,7 +1279,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/Path/:firstname/:last_name/:age/:weight/:human/:gender',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         firstname: { "in": "path", "name": "firstname", "required": true, "dataType": "string" },
         lastname: { "in": "path", "name": "last_name", "required": true, "dataType": "string" },
@@ -1304,7 +1304,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/Header',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         firstname: { "in": "header", "name": "firstname", "required": true, "dataType": "string" },
         lastname: { "in": "header", "name": "last_name", "required": true, "dataType": "string" },
@@ -1329,7 +1329,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/Request',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         request: { "in": "request", "name": "request", "required": true, "dataType": "object" },
       };
@@ -1349,7 +1349,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/ParameterTest/Body',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         body: { "in": "body", "name": "body", "required": true, "ref": "ParameterTestModel" },
       };
@@ -1369,7 +1369,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/ParameterTest/BodyProps',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         firstname: { "in": "body-prop", "name": "firstname", "required": true, "dataType": "string" },
         lastname: { "in": "body-prop", "name": "lastname", "required": true, "dataType": "string" },
@@ -1394,7 +1394,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/ParamaterQueyAnyType',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         name: { "in": "query", "name": "name", "required": true, "dataType": "any" },
       };
@@ -1414,7 +1414,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/ParameterTest/ParamaterQueyArray',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         name: { "in": "query", "name": "name", "required": true, "dataType": "array", "array": { "dataType": "string" } },
       };
@@ -1434,7 +1434,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/ParameterTest/ParamaterBodyAnyType',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         body: { "in": "body", "name": "body", "required": true, "dataType": "any" },
       };
@@ -1454,7 +1454,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/ParameterTest/ParamaterBodyArrayType',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         body: { "in": "body", "name": "body", "required": true, "dataType": "array", "array": { "ref": "ParameterTestModel" } },
       };
@@ -1474,7 +1474,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/ParamaterImplicitString',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         name: { "default": "Iron man", "in": "query", "name": "name", "dataType": "string" },
       };
@@ -1494,7 +1494,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/ParamaterImplicitNumber',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         age: { "default": 40, "in": "query", "name": "age", "dataType": "double" },
       };
@@ -1514,7 +1514,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/ParamaterImplicitEnum',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         gender: { "in": "query", "name": "gender", "dataType": "enum", "enums": ["MALE", "FEMALE"] },
       };
@@ -1534,7 +1534,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/ParamaterImplicitStringArray',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         arr: { "default": ["V1", "V2"], "in": "query", "name": "arr", "dataType": "array", "array": { "dataType": "string" } },
       };
@@ -1554,7 +1554,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/paramaterImplicitNumberArray',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         arr: { "default": [1, 2, 3], "in": "query", "name": "arr", "dataType": "array", "array": { "dataType": "double" } },
       };
@@ -1574,7 +1574,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/paramaterImplicitDateTime',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         date: { "default": "2017-01-01T00:00:00.000Z", "in": "query", "name": "date", "dataType": "datetime" },
       };
@@ -1594,7 +1594,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/ParameterTest/paramaterImplicitDate',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         date: { "default": "2018-01-15", "in": "query", "name": "date", "dataType": "date", "validators": { "isDate": { "errorMsg": "date" } } },
       };
@@ -1615,7 +1615,7 @@ export function RegisterRoutes(router: any) {
     });
   router.get('/v1/SecurityTest',
     authenticateMiddleware([{ "name": "api_key" }]),
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         request: { "in": "request", "name": "request", "required": true, "dataType": "object" },
       };
@@ -1636,7 +1636,7 @@ export function RegisterRoutes(router: any) {
     });
   router.get('/v1/SecurityTest/Koa',
     authenticateMiddleware([{ "name": "api_key" }]),
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         request: { "in": "request", "name": "request", "required": true, "dataType": "object" },
       };
@@ -1657,7 +1657,7 @@ export function RegisterRoutes(router: any) {
     });
   router.get('/v1/SecurityTest/Oauth',
     authenticateMiddleware([{ "name": "tsoa_auth", "scopes": ["write:pets", "read:pets"] }]),
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         request: { "in": "request", "name": "request", "required": true, "dataType": "object" },
       };
@@ -1678,7 +1678,7 @@ export function RegisterRoutes(router: any) {
     });
   router.get('/v1/SecurityTest/OauthOrAPIkey',
     authenticateMiddleware([{ "name": "tsoa_auth", "scopes": ["write:pets", "read:pets"] }, { "name": "api_key" }]),
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         request: { "in": "request", "name": "request", "required": true, "dataType": "object" },
       };
@@ -1698,7 +1698,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Controller/normalStatusCode',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1717,7 +1717,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Controller/noContentStatusCode',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1736,7 +1736,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Controller/customStatusCode',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1755,7 +1755,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Controller/customHeader',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
       };
 
@@ -1774,7 +1774,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/date',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         minDateValue: { "in": "query", "name": "minDateValue", "required": true, "dataType": "date", "validators": { "isDate": { "errorMsg": "minDateValue" }, "minDate": { "value": "2018-01-01" } } },
         maxDateValue: { "in": "query", "name": "maxDateValue", "required": true, "dataType": "date", "validators": { "isDate": { "errorMsg": "maxDateValue" }, "maxDate": { "value": "2016-01-01" } } },
@@ -1795,7 +1795,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/datetime',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         minDateValue: { "in": "query", "name": "minDateValue", "required": true, "dataType": "datetime", "validators": { "isDateTime": { "errorMsg": "minDateValue" }, "minDate": { "value": "2018-01-01T00:00:00" } } },
         maxDateValue: { "in": "query", "name": "maxDateValue", "required": true, "dataType": "datetime", "validators": { "isDateTime": { "errorMsg": "maxDateValue" }, "maxDate": { "value": "2016-01-01T00:00:00" } } },
@@ -1816,7 +1816,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/integer',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         minValue: { "in": "query", "name": "minValue", "required": true, "dataType": "integer", "validators": { "isInt": { "errorMsg": "minValue" }, "minimum": { "value": 5 } } },
         maxValue: { "in": "query", "name": "maxValue", "required": true, "dataType": "integer", "validators": { "isInt": { "errorMsg": "maxValue" }, "maximum": { "value": 3 } } },
@@ -1837,7 +1837,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/float',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         minValue: { "in": "query", "name": "minValue", "required": true, "dataType": "float", "validators": { "isFloat": { "errorMsg": "minValue" }, "minimum": { "value": 5.5 } } },
         maxValue: { "in": "query", "name": "maxValue", "required": true, "dataType": "float", "validators": { "isFloat": { "errorMsg": "maxValue" }, "maximum": { "value": 3.5 } } },
@@ -1858,7 +1858,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/boolean',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         boolValue: { "in": "query", "name": "boolValue", "required": true, "dataType": "boolean", "validators": { "isBoolean": { "errorMsg": "boolValue" } } },
       };
@@ -1878,7 +1878,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/string',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         minLength: { "in": "query", "name": "minLength", "required": true, "dataType": "string", "validators": { "minLength": { "value": 5 } } },
         maxLength: { "in": "query", "name": "maxLength", "required": true, "dataType": "string", "validators": { "maxLength": { "value": 3 } } },
@@ -1900,7 +1900,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/customRequiredErrorMsg',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         longValue: { "in": "query", "name": "longValue", "required": true, "dataType": "long", "validators": { "isLong": { "errorMsg": "Required long number." } } },
       };
@@ -1920,7 +1920,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.get('/v1/Validate/parameter/customInvalidErrorMsg',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         longValue: { "in": "query", "name": "longValue", "required": true, "dataType": "long", "validators": { "isLong": { "errorMsg": "Invalid long number." } } },
       };
@@ -1940,7 +1940,7 @@ export function RegisterRoutes(router: any) {
       return promiseHandler(controller, promise, context, next);
     });
   router.post('/v1/Validate/body',
-    async (context, next) => {
+    async (context: any, next: any) => {
       const args={
         body: { "in": "body", "name": "body", "required": true, "ref": "ValidateModel" },
       };
@@ -2011,8 +2011,7 @@ export function RegisterRoutes(router: any) {
         next();
       })
       .catch((error: any) => {
-        context.status=error.status||500;
-        context.body=error;
+        context.throw(error.status||500, error.message, error);
         next();
       });
   }

@@ -41,7 +41,7 @@ export function RegisterRoutes(router: any) {
             {{#if security.length}}
             authenticateMiddleware({{json security}}),
             {{/if}}
-            async (context, next) => {
+            async (context: any, next: any) => {
             const args = {
                 {{#each parameters}}
                     {{@key}}: {{{json this}}},
@@ -122,8 +122,7 @@ export function RegisterRoutes(router: any) {
             next();
         })
         .catch((error: any) => {
-            context.status = error.status || 500;
-            context.body = error;
+            context.throw(error.status || 500, error.message, error);
             next();
         });
     }
