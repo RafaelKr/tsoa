@@ -123,7 +123,6 @@ export function RegisterRoutes(router: any) {
         })
         .catch((error: any) => {
             context.throw(error.status || 500, error.message, error);
-            next();
         });
     }
 
