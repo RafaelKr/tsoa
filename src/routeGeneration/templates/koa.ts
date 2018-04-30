@@ -54,7 +54,7 @@ export function RegisterRoutes(router: any) {
             } catch (error) {
               context.status = error.status || 500;
               context.body = error;
-              return next();
+              return
             }
 
             {{#if ../../iocModule}}
@@ -70,31 +70,37 @@ export function RegisterRoutes(router: any) {
     {{/each}}
 
   {{#if useSecurity}}
-  function authenticateMiddleware(security: TsoaRoute.Security[] = []) {
-    return (context: any, next: any) => {
-        let responded = 0;
-        let success = false;
-        for (const secMethod of security) {
-            koaAuthentication(context.request, secMethod.name, secMethod.scopes).then((user: any) => {
-                // only need to respond once
-                if (!success) {
-                    success = true;
-                    responded++;
-                    context.request['user'] = user;
-                    next();
-                }
-            })
-            .catch((error: any) => {
-                responded++;
-                if (responded == security.length && !success) {
-                    context.status = error.status || 401;
-                    context.body = error;
-                    next();
-                }
-            })
+    function authenticateMiddleware(security: TsoaRoute.Security[] = []) {
+        return async (context: any, next: any) => {
+            let authPromiseChain = Promise.resolve()
+
+            for (const secMethod of security) {
+                authPromiseChain = authPromiseChain.then(async () => {
+                    let user: any
+                    
+                    try {
+                        user = await koaAuthentication(context.request, secMethod.name, secMethod.scopes)
+                    } catch (error) {
+                        context.status = error.status || 401;
+                        context.body = error;
+                        throw error
+                    }
+
+                    if (user) {
+                        context.request['user'] = user;
+                    }
+                })
+            }
+
+            try {
+                await authPromiseChain
+            } catch(error) {
+                return
+            }
+
+            await next()
         }
     }
-  }
   {{/if}}
 
   function promiseHandler(controllerObj: any, promise: Promise<any>, context: any, next: () => Promise<any>) {
@@ -119,11 +125,10 @@ export function RegisterRoutes(router: any) {
                     context.status = statusCode;
                 }
             }
-            next();
+            return next();
         })
         .catch((error: any) => {
             context.throw(error.status || 500, error.message, error);
-            next();
         });
     }
 
